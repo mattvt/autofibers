@@ -21,16 +21,16 @@ sequenctial_SS_YMquench <- function(all, path = getwd()){
     facet_grid(. ~ temp, space = "free")+
 
 
-    png(filename=paste(path,"/ymAll.png", sep = ""),
-        type="cairo",
-        units="in",
-        width=10,
-        height=2,
-        pointsize=12,
-        res=1000)
+#    png(filename=paste(path,"/ymAll.png", sep = ""),
+#        type="cairo",
+#        units="in",
+#        width=10,
+#        height=2,
+#        pointsize=12,
+#        res=1000)
 
-  print(gg)
-  dev.off()
+#  print(gg)
+#  dev.off()
   ################################
   ##### Stress Strain in a row ###
   ################################
@@ -50,16 +50,16 @@ sequenctial_SS_YMquench <- function(all, path = getwd()){
     facet_grid(. ~ temp, space = "free")+
 
 
-    png(filename=paste(path,"/ssAll.png", sep = ""),
-        type="cairo",
-        units="in",
-        width=10,
-        height=2,
-        pointsize=12,
-        res=1000)
+#   png(filename=paste(path,"/ssAll.png", sep = ""),
+#        type="cairo",
+#        units="in",
+#        width=10,
+#        height=2,
+#        pointsize=12,
+#        res=1000)
 
-  print(gg2)
-  dev.off()
+#  print(gg2)
+#  dev.off()
 
   ###################
   #Combine the two###

@@ -14,7 +14,6 @@ library(stringr)
 # Load the functions required for package.
 load("C:/Users/Matt/Google Drive/Education/Rowan/BME/Research/autofibers/functionsOnlyEnvironment.RData") 
 ```
-lkj
 
 ## Anneal Regression
 
@@ -38,7 +37,7 @@ model_fit_stats(anneal.UTS)
 ```
 
 ## Quench Regression
-I could not get the same model to work with the quench data. However, I got a different model that works quite well, and is also suggested by the data. Here I use a 3rd degree polynomial, but it looks like once we increase our sample size, a second degree will fit nicely. Like before, the model has a high predictive value, and does not seem to be over fit based on both the eye test and the fit stats
+
 
 ```{r Quench Plot, echo = FALSE}
 gg <- ggplot(min.quench, aes(x = Perc_Cryst, y = UTS_FTIR))+
