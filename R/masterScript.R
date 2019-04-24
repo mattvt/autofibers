@@ -67,7 +67,5 @@ all$condition <- cond
 
 all <- na.omit(all)
 
-this is new
-
 return(all)
 }

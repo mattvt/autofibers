@@ -18,5 +18,6 @@ smoothEach <- function(allMech, wind){
 
   return(y)
 
+
 }
 
