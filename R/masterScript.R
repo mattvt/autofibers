@@ -54,7 +54,7 @@ allMech <- na.omit(allMech)
 all <- merge(allMech, ftirSem, by = 'temp')
 all$stressFTIR <- all$forces/all$CSA_FTIR/1000
 all$stressSEM <- all$forces/all$CSA_SEM/1000
-all$stressHyb <- all$forces/all$Hybrid/1000
+#all$stressHyb <- all$forces/all$Hybrid/1000
 all$strain <- all$stroke/12.5
 
 #get youngs modulus and maximum strength
