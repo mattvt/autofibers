@@ -23,7 +23,7 @@ min.quench <- min.all[min.all$condition == "quench",]
 
 ###Multivariate Linear model predicting function (UTS) from structure
 
-#Anneal
+#Anneal sjkh fskjdfh sjkdfh skjfh
 anneal.UTS <- lm(UTS_FTIR ~ wamor_or + wcryst_or + tot_or, data = min.anneal)
 summary(multiUTS)
 model_fit_stats(multiUTS)
