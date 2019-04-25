@@ -17,7 +17,7 @@ getYM <- function(df){
 
     df$UTS_FTIR <- rep(max(df$stressFTIR),nrow(df))
     df$UTS_SEM  <- rep(max(df$stressSEM) ,nrow(df))
-    df$UTS_Hyb  <- rep(max(df$stressHyb) ,nrow(df))
+   # df$UTS_Hyb  <- rep(max(df$stressHyb) ,nrow(df))
 
   }
   return(df)
