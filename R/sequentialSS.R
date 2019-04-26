@@ -33,7 +33,7 @@ gg2 <- ggplot2::ggplot(all, aes(x = strain, y = stressFTIR))+
   xlab('Strain')+
   ylab('Stress (GPa)')+
   scale_x_continuous(breaks = pretty(all$strain, n = 2))+
-  labs(title = "Stress vs Strain for each Temp",
+  labs(title = paste("Stress vs Strain for each Temp: ", name, sep = ""),
        subtitle = "",
        color = 'Temperature')+
   theme_minimal()+
