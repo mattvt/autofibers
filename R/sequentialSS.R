@@ -14,9 +14,9 @@ width <- length(unique(all$temp)) + 3
 
 gg <- ggplot2::ggplot(all, aes(x = strain, y = ym))+
   geom_line(size = 1.5)+
-    xlab('Strain')+
-    ylab('dStress (GPa)')+
-    scale_x_continuous(breaks = pretty(all$strain, n = 2))+
+  xlab('Strain')+
+  ylab('dStress (GPa)')+
+  scale_x_continuous(breaks = pretty(all$strain, n = 2))+
     labs(title = "Derivitive of stress with respect to strain",
          subtitle = "",
          color = 'Temp (C)')+

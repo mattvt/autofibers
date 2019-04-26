@@ -14,7 +14,6 @@ combineData <- function(n = 300, path = getwd(), condition = "condition"){
   library(smoother)
   library(reshape2)
 
-
   #choose ftirSEM file and mech tests
   ftirSemPath <- file.choose()
   mechtestsPath <- choose.files()
@@ -41,12 +40,7 @@ combineData <- function(n = 300, path = getwd(), condition = "condition"){
   allMech$stroke <- as.numeric(as.character(allMech$stroke))
   allMech$time <- as.numeric(as.character(allMech$time))
 
-  #take every n number of rows
-  n <- n * length(unique(allMech$temp))
-  n <- length(allMech$temp) %/% n
-  allMech <- allMech[seq(1, nrow(allMech), n), ]
-
-  allMech <- smoothEach(allMech, .01)
+  allMech <- smoothEach(allMech, .01, n = n)
   allMech <- na.omit(allMech)
 
   # Merge allMech and ftirSem and calculate stress vs strain
@@ -54,13 +48,11 @@ combineData <- function(n = 300, path = getwd(), condition = "condition"){
   all <- merge(allMech, ftirSem, by = 'temp')
   all$stressFTIR <- all$forces/all$CSA_FTIR/1000
   all$stressSEM <- all$forces/all$CSA_SEM/1000
-  #all$stressHyb <- all$forces/all$Hybrid/1000
   all$strain <- all$stroke/12.5
 
 #get youngs modulus and maximum strength
 all <- getYMall(all)
 all$index <- seq(1, dim(all)[1],1)
-#masterPlots(all, path = path)
 
 cond <- rep(condition, length(all$temp))
 all$condition <- cond
