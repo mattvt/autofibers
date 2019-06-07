@@ -1,6 +1,7 @@
 #smooth each temp individually then rbin
 #' @export
-smoothEach <- function(allMech, wind, n = 300){
+smoothEach <- function(allMech, wind, n = 100){
+
   indi <- unique(allMech$temp)
 
   y <- data.frame(temp = NA, time = NA, forces = NA, stroke = NA)
