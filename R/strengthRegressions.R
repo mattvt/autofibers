@@ -11,7 +11,7 @@ library(dplyr)
 #data <- dplyr::filter(minusSS, variable == 'Perc_Cryst' | variable == 'UTS_FTIR' )
 
 #subset the data
-minusSS <- unique(subset(all, select = -c(time, index, forces,stroke,ym, strain, stressSEM, stressFTIR, stressHyb, dstrain, dstress )))
+minusSS <- unique(subset(all, select = -c(time, index, forces,stroke,ym, strain, stressSEM, stressFTIR, dstrain, dstress )))
 data <- minusSS
 
 #nmake linear Model

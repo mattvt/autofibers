@@ -8,7 +8,7 @@ width <- length(unique(all$temp)) + 3
   library(ggplot2)
   library(gridExtra)
 
-  ################################
+################################
 ##### ym vs strain in a row ###
 ################################
 

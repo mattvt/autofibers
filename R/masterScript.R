@@ -51,7 +51,15 @@ combineData <- function(n = 50, path = getwd(), condition = "condition"){
   fitykData$Peak <- substr(fitykData$Peak, 3, 6)
 
   #make new dataframe of peak data that has percent crystallinity and orientation calculated
-  fitykCalcs <- getPeakAreaAll(fitykData)
+  fitykC
+
+
+
+
+
+
+
+  alcs <- getPeakAreaAll(fitykData)
   fitykCalcs$Crystallinity <- fitykCalcs$area1725/(fitykCalcs$area1725 + fitykCalcs$area1736*1.46)
 
   #need to get the 1157 peak fitted in fityk first so I can do the orientation calculation
