@@ -36,8 +36,9 @@ combineData <- function(n = 50, path = getwd(), condition = "condition"){
   # and fityK data
   names(ftykDataPath) <- basename(ftykDataPath)
   renamedFityk <- names(ftykDataPath)
-  renamedFityk <- substr(renamedFityk, 2, 3)
+  renamedFityk <- substr(renamedFityk, 2, length(basename(ftykDataPath)) - 19)
   names(ftykDataPath) <- renamedFityk
+  renamedFityk
 
   #Read mechtests data
   allMech <- ldply(mechtestsPath, read.csv)
@@ -51,16 +52,9 @@ combineData <- function(n = 50, path = getwd(), condition = "condition"){
   fitykData$Peak <- substr(fitykData$Peak, 3, 6)
 
   #make new dataframe of peak data that has percent crystallinity and orientation calculated
-  fitykC
-
-
-
-
-
-
-
-  alcs <- getPeakAreaAll(fitykData)
+  fitykCalcs <- getPeakAreaAll(fitykData)
   fitykCalcs$Crystallinity <- fitykCalcs$area1725/(fitykCalcs$area1725 + fitykCalcs$area1736*1.46)
+  fitykCalcs$time <- substr(fitykCalcs$Temp, 4,6)
 
   #need to get the 1157 peak fitted in fityk first so I can do the orientation calculation
 

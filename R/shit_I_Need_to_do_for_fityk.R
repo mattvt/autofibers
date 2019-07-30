@@ -10,44 +10,52 @@
 #   8. ...yeah probably in R.
 
 
+OGdata
 
+plot <- ggplot(OGdata, aes(x = as.numeric(Temp), y = Crystallinity)) +
+  stat_smooth()+
+  geom_point(alpha = .5)+
+  xlab("Temperature")+
+  theme_minimal(base_size = 15)+
+  ggtitle("Temperature Vs Crystallinity")
 
+path <- getwd()
 
-
-
-
-
-
-
-
-
-
-
-
-library("RcppFaddeeva")
-##Voigt(x, x0, sigma, gamma, real = TRUE, ...)
-
-x <- Voigt(1000:3000, 1726, 16.0084, 3.35124)
-y <- Voigt(1000:3000, 1738, 9.5, 0)
-
-z <- x + y
-xy <- data.frame(1000:3000, x,y,z)
-
-test <- ggplot(xy, aes(x = X1000.3000, y = x))+
-  geom_line()+
-  geom_line(aes(x = X1000.3000, y = y))+
-  geom_line(aes(x = X1000.3000, y = z), size = 1)+
-  xlim(c(1650,1800))
-test
-
-
-png(filename=paste(getwd(),"/gaussTest.png", sep = ""),
+png(filename=paste(path,"/tempVSCrystallinityOG.png", sep = ""),
     type="cairo",
     units="in",
-    width=6,
-    height=5,
+    width=5,
+    height=4,
     pointsize=12,
-    res=1000)
+    res=1500)
 
-test
+#Plot
+print(plot)
+
 dev.off()
+
+
+
+
+
+
+
+kinetics
+plot <- ggplot(kinetics, aes(x = time, y = Crystallinity)) +
+  geom_point()+
+  scale_x_discrete(limits=c("0mi", "0!5","1mi","2mi","4mi","8mi","16m","32m"))
+plot
+
+tempOpt
+plot <- ggplot(tempOpt, aes(x = as.numeric(Temp), y = Crystallinity)) +
+  geom_point()
+  #scale_x_discrete(limits=c("0mi", "0!5","1mi","2mi","4mi","8mi","16m","32m"))
+plot
+
+
+
+
+
+
+
+

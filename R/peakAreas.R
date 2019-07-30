@@ -1,4 +1,4 @@
-#this function gets the peak area for one peak
+#this function gets the peak area for one peak for each sample
 
 getPeakArea <- function(data.frame, peak){
 
@@ -9,7 +9,7 @@ getPeakArea <- function(data.frame, peak){
 
   for (i in 1:length(indi)){
     x <- peakx[peakx$Temp == indi[i],]
-    sum <- sum(x$Area)
+    sum <- as.data.frame(x$Area)
     y <- rbind(y, sum)
   }
 
@@ -21,7 +21,7 @@ return(y)
 getPeakAreaAll <- function(data.frame){
 
   indi <- unique(data.frame$Peak)
-  y <- data.frame(unique(data.frame$Temp))
+  y <- data.frame((data.frame$Temp))
   names(y) <- "Temp"
   x <- data.frame()
 
